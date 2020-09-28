@@ -12,9 +12,9 @@ final class HeapTests: XCTestCase {
         heap.add(57)
         heap.add(47)
         // results.
-        XCTAssertEqual(try heap.pull(), 3)
-        XCTAssertEqual(try heap.pull(), 5)
-        XCTAssertEqual(try heap.pull(), 7)
+        XCTAssertEqual(heap.pull(), 3)
+        XCTAssertEqual(heap.pull(), 5)
+        XCTAssertEqual(heap.pull(), 7)
     }
 
     func testMax() {
@@ -27,9 +27,9 @@ final class HeapTests: XCTestCase {
         heap.add(57)
         heap.add(47)
         // results.
-        XCTAssertEqual(try heap.pull(), 57)
-        XCTAssertEqual(try heap.pull(), 47)
-        XCTAssertEqual(try heap.pull(), 17)
+        XCTAssertEqual(heap.pull(), 57)
+        XCTAssertEqual(heap.pull(), 47)
+        XCTAssertEqual(heap.pull(), 17)
     }
 
 

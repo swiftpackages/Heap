@@ -1,7 +1,3 @@
-enum HeapErrors: Error {
-    case IllegalStateException
-}
-
 protocol Heap {
     associatedtype T
     var storage: [T] { get set }
@@ -57,16 +53,16 @@ extension Heap {
         storage[indexTwo] = tmp
     }
 
-    func peak() throws -> T {
+    func peak() -> T? {
         if self.size == 0 {
-            throw HeapErrors.IllegalStateException
+            return nil
         }
 
         return self.storage[0]
     }
 
-    mutating func pull() throws -> T {
-        let item = try self.peak()
+    mutating func pull() -> T? {
+        let item = self.peak()
         storage[0] = self.storage[self.size - 1]
         self.heapifyDown()
         return item
