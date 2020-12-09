@@ -1,3 +1,7 @@
+![macOS](https://github.com/swiftpackages/Heap/workflows/macOS/badge.svg)
+![ubuntu](https://github.com/swiftpackages/Heap/workflows/ubuntu/badge.svg)
+![docs](https://github.com/swiftpackages/Heap/workflows/docs/badge.svg)
+
 # Heap
 
 A maintained swift heap package that provides min and max heaps in both iterative and recursive variants.
