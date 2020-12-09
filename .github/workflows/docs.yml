@@ -15,7 +15,7 @@ jobs:
       id: get_tag
       run: echo ::set-output name=tag::${GITHUB_REF#refs/tags/}
     - name: Run Jazzy
-      uses: swiftpackages/publish-jazzy-docs@v1.1.3
+      uses: swiftpackages/publish-jazzy-docs@v2
       with:
         args: --module_version ${{ steps.get_tag.outputs.tag }} --github_file_prefix https://github.com/swiftpackages/Heap/tree/${{ steps.get_tag.outputs.tag }} --output docs/${{ steps.get_tag.outputs.tag }}
         config: .jazzy.yaml
