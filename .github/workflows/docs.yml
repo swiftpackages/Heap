@@ -18,5 +18,4 @@ jobs:
       uses: swiftpackages/publish-jazzy-docs@v2.0.0
       with:
         args: --module_version ${{ steps.get_tag.outputs.tag }} --github_file_prefix https://github.com/swiftpackages/Heap/tree/${{ steps.get_tag.outputs.tag }} --output docs/${{ steps.get_tag.outputs.tag }}
-        config: .jazzy.yaml
         personal_access_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
