@@ -2,39 +2,117 @@ import XCTest
 @testable import Heap
 
 final class HeapTests: XCTestCase {
-    func testMin() {
-        var heap = MinHeap<Int>()
-        heap.add(7)
-        heap.add(5)
-        heap.add(15)
-        heap.add(17)
-        heap.add(3)
-        heap.add(57)
-        heap.add(47)
-        // results.
-        XCTAssertEqual(heap.pull(), 3)
-        XCTAssertEqual(heap.pull(), 5)
-        XCTAssertEqual(heap.pull(), 7)
+    let numberOfHeaps = 100
+    let maxNumberOfValues = 1000
+
+    func testMaxHeap() {
+        for _ in 1...numberOfHeaps {
+            var values: [Int] = []
+            var heap = MaxHeap<Int>()
+
+            let amount = Int.random(in: 1...maxNumberOfValues)
+            for _ in 1...amount {
+                let value = Int.random(in: Int.min...Int.max)
+                values.append(value)
+                heap.add(value)
+            }
+
+            values.sort(by: { $0 > $1 })
+
+            for value in values {
+                XCTAssertEqual(value, heap.pull())
+            }
+        }
     }
 
-    func testMax() {
+    func testMaxHeapNilPull() {
         var heap = MaxHeap<Int>()
-        heap.add(7)
-        heap.add(5)
-        heap.add(15)
-        heap.add(17)
-        heap.add(3)
-        heap.add(57)
-        heap.add(47)
-        // results.
-        XCTAssertEqual(heap.pull(), 57)
-        XCTAssertEqual(heap.pull(), 47)
-        XCTAssertEqual(heap.pull(), 17)
+        XCTAssertNil(heap.pull())
     }
 
+    func testMaxHeapRecursive() {
+        for _ in 1...numberOfHeaps {
+            var values: [Int] = []
+            var heap = MaxHeapRecursive<Int>()
+
+            let amount = Int.random(in: 1...maxNumberOfValues)
+            for _ in 1...amount {
+                let value = Int.random(in: Int.min...Int.max)
+                values.append(value)
+                heap.add(value)
+            }
+
+            values.sort(by: { $0 > $1 })
+
+            for value in values {
+                XCTAssertEqual(value, heap.pull())
+            }
+        }
+    }
+
+    func testMaxHeapRecursiveNilPull() {
+        var heap = MaxHeapRecursive<Int>()
+        XCTAssertNil(heap.pull())
+    }
+
+    func testMinHeap() {
+        for _ in 1...numberOfHeaps {
+            var values: [Int] = []
+            var heap = MinHeap<Int>()
+
+            let amount = Int.random(in: 1...maxNumberOfValues)
+            for _ in 1...amount {
+                let value = Int.random(in: Int.min...Int.max)
+                values.append(value)
+                heap.add(value)
+            }
+
+            values.sort(by: { $0 < $1 })
+
+            for value in values {
+                XCTAssertEqual(value, heap.pull())
+            }
+        }
+    }
+
+    func testMinHeapNilPull() {
+        var heap = MinHeap<Int>()
+        XCTAssertNil(heap.pull())
+    }
+
+    func testMinHeapRecursive() {
+        for _ in 1...numberOfHeaps {
+            var values: [Int] = []
+            var heap = MinHeapRecursive<Int>()
+
+            let amount = Int.random(in: 1...maxNumberOfValues)
+            for _ in 1...amount {
+                let value = Int.random(in: Int.min...Int.max)
+                values.append(value)
+                heap.add(value)
+            }
+
+            values.sort(by: { $0 < $1 })
+
+            for value in values {
+                XCTAssertEqual(value, heap.pull())
+            }
+        }
+    }
+
+    func testMinHeapRecursiveNilPull() {
+        var heap = MinHeapRecursive<Int>()
+        XCTAssertNil(heap.pull())
+    }
 
     static var allTests = [
-        ("testMin", testMin),
-        ("testMax", testMax),
+        ("testMaxHeap", testMaxHeap),
+        ("testMaxHeapNilPull", testMaxHeapNilPull),
+        ("testMaxHeapRecursive", testMaxHeapRecursive),
+        ("testMaxHeapRecursiveNilPull", testMaxHeapRecursiveNilPull),
+        ("testMinHeap", testMinHeap),
+        ("testMinHeapNilPull", testMinHeapNilPull),
+        ("testMinHeapRecursive", testMinHeapRecursive),
+        ("testMinHeapRecursivePull", testMinHeapRecursiveNilPull),
     ]
 }
