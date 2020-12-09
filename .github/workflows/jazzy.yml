@@ -19,4 +19,4 @@ jobs:
       with:
         args: --module_version $tag --github_file_prefix https://github.com/swiftpackages/Heap/tree/$tag --output docs/$tag
         config: .jazzy.yml
-        private_access_token: ${{ secrets.PRIVATE_ACCESS_TOKEN }}
+        personal_access_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
