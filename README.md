@@ -78,4 +78,4 @@ heap.pull()
 
 ### Additional Documentation
 
-[You can find the full documentation on the documentation website.](https://swiftpackages.github.com/Heap)
+[You can find the full documentation on the documentation website.](https://swiftpackages.github.io/Heap)
