@@ -2,7 +2,7 @@ import XCTest
 @testable import Heap
 
 final class HeapTests: XCTestCase {
-    let numberOfHeaps = 100
+    let numberOfHeaps = 1000
     let maxNumberOfValues = 1000
 
     func testMaxHeap() {
