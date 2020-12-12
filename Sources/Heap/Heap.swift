@@ -16,17 +16,17 @@ protocol Heap {
 /// `Heap` extension to provides all the shared code between `MaxHeap`, `MinHeap`, `MaxHeapRecursive`, and `MinHeapRecursive`.
 extension Heap {
     /// The internal storage's `Array`.`size` property
-    var size: Int {
+    public var size: Int {
         return self.storage.count
     }
     /// The internal storage's `Array`.`isEmpty` property
-    var isEmpty: Bool {
+    public var isEmpty: Bool {
         return self.storage.isEmpty
     }
     /// Read the next item off the `Heap` without removing it.
     ///
     /// - returns: The next item of type `T` from the `Heap` or, if the `Heap`.`isEmpty` return's `nil`.
-    func peak() -> T? {
+    public func peak() -> T? {
         guard !self.isEmpty else {
             return nil
         }
@@ -35,7 +35,7 @@ extension Heap {
     /// Read and remove the next item off `Heap`.
     ///
     /// - returns: The next item of type `T` from the `Heap` or, if the `Heap`.`isEmpty` return's `nil`.
-    mutating func pull() -> T? {
+    public mutating func pull() -> T? {
         let item = peak()
         guard !self.isEmpty else {
             return nil
@@ -51,7 +51,7 @@ extension Heap {
     ///
     /// - parameters:
     ///     - elem: Item to add to the `Heap`.
-    mutating func add(_ elem: T) {
+    public mutating func add(_ elem: T) {
         self.storage.append(elem)
         self.heapifyUp()
     }
