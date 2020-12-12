@@ -14,7 +14,7 @@ You can easily add as a requirement with SwiftPM.
 
 Here are some quick copypastas for you
 ```swift
-.package(url: "https://github.com/swiftpackages/Heap.git", from: "1.1.0"),
+.package(url: "https://github.com/swiftpackages/Heap.git", from: "1.1.1"),
 ```
 ```swift
 .product(name: "Heap", package: "Heap"),
@@ -37,7 +37,7 @@ let package = Package(
             targets: ["SuperCoolProject"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/swiftpackages/Heap.git", from: "1.1.0"),
+        .package(url: "https://github.com/swiftpackages/Heap.git", from: "1.1.1"),
     ],
     targets: [
         .target(
