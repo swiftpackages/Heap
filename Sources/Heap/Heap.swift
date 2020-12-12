@@ -140,7 +140,7 @@ extension Heap {
 }
 /// A `MaxHeap` using iterative heapify methods.
 /// - note: The datatype in the `Heap` must conform to `Comparable`.
-struct MaxHeap<T: Comparable>: Heap {
+public struct MaxHeap<T: Comparable>: Heap {
     /// The storage array of the `Heap`
     internal var storage: [T] = []
     /// The `MaxHeap` iterative `heapifyUp` algorithm.
@@ -172,7 +172,7 @@ struct MaxHeap<T: Comparable>: Heap {
 }
 /// A `MinHeap` using iterative heapify methods.
 /// - note: The datatype in the `Heap` must conform to `Comparable`.
-struct MinHeap<T: Comparable>: Heap {
+public struct MinHeap<T: Comparable>: Heap {
     /// The storage array of the `Heap`
     internal var storage: [T] = []
     /// The `MinHeap` iterative `heapifyUp` algorithm.
@@ -204,7 +204,7 @@ struct MinHeap<T: Comparable>: Heap {
 }
 /// A `MaxHeapRecursive` using recursive heapify methods.
 /// - note: The datatype in the `Heap` must conform to `Comparable`.
-struct MaxHeapRecursive<T: Comparable>: Heap {
+public struct MaxHeapRecursive<T: Comparable>: Heap {
     /// The storage array of the `Heap`
     internal var storage: [T] = []
     /// The `MaxHeapRecursive` recursive `heapifyUp` starter method.
@@ -247,7 +247,7 @@ struct MaxHeapRecursive<T: Comparable>: Heap {
 }
 /// A `MinHeapRecursive` using recursive heapify methods.
 /// - note: The datatype in the `Heap` must conform to `Comparable`.
-struct MinHeapRecursive<T: Comparable>: Heap {
+public struct MinHeapRecursive<T: Comparable>: Heap {
     /// The storage array of the `Heap`
     internal var storage: [T] = []
     /// The `MinHeapRecursive` recursive `heapifyUp` starter method.
