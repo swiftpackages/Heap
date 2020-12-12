@@ -1,5 +1,5 @@
 /// The `Heap` protocol
-protocol Heap {
+public protocol Heap {
     /// The type to store in the `Heap`
     associatedtype T
     /// The storage array of the `Heap`
@@ -144,9 +144,9 @@ public struct MaxHeap<T: Comparable>: Heap {
     /// Public init
     public init() {}
     /// The storage array of the `Heap`
-    internal var storage: [T] = []
+    public var storage: [T] = []
     /// The `MaxHeap` iterative `heapifyUp` algorithm.
-    mutating internal func heapifyUp() {
+    mutating public func heapifyUp() {
         var index = self.size - 1
         while (hasParent(index) && self.storage[index] > getParent(index)) {
             let parentIndex = Self.getParentIndex(index)
@@ -155,7 +155,7 @@ public struct MaxHeap<T: Comparable>: Heap {
         }
     }
     /// The `MaxHeap` iterative `heapifyDown` algorithm.
-    mutating internal func heapifyDown() {
+    mutating public func heapifyDown() {
         var index = 0
         while (hasLeftChild(index)) {
             var largest = Self.getLeftChildIndex(index)
@@ -178,9 +178,9 @@ public struct MinHeap<T: Comparable>: Heap {
     /// Public init
     public init() {}
     /// The storage array of the `Heap`
-    internal var storage: [T] = []
+    public var storage: [T] = []
     /// The `MinHeap` iterative `heapifyUp` algorithm.
-    mutating internal func heapifyUp() {
+    mutating public func heapifyUp() {
         var index = self.size - 1
         while (hasParent(index) && self.storage[index] < getParent(index)) {
             let parentIndex = Self.getParentIndex(index)
@@ -189,7 +189,7 @@ public struct MinHeap<T: Comparable>: Heap {
         }
     }
     /// The `MinHeap` iterative `heapifyDown` algorithm.
-    mutating internal func heapifyDown() {
+    mutating public func heapifyDown() {
         var index = 0
         while (hasLeftChild(index)) {
             var smallest = Self.getLeftChildIndex(index)
@@ -212,9 +212,9 @@ public struct MaxHeapRecursive<T: Comparable>: Heap {
     /// Public init
     public init() {}
     /// The storage array of the `Heap`
-    internal var storage: [T] = []
+    public var storage: [T] = []
     /// The `MaxHeapRecursive` recursive `heapifyUp` starter method.
-    mutating internal func heapifyUp() {
+    mutating public func heapifyUp() {
         heapifyUp(at: self.size - 1)
     }
     /// The `MaxHeapRecursive` recursive `heapifyUp` algorithm.
@@ -228,7 +228,7 @@ public struct MaxHeapRecursive<T: Comparable>: Heap {
         }
     }
     /// The `MaxHeapRecursive` recursive `heapifyDown` starter method.
-    mutating internal func heapifyDown() {
+    mutating public func heapifyDown() {
         heapifyDown(at: 0)
     }
     /// The `MaxHeapRecursive` recursive `heapifyDown` algorithm.
@@ -257,9 +257,9 @@ public struct MinHeapRecursive<T: Comparable>: Heap {
     /// Public init
     public init() {}
     /// The storage array of the `Heap`
-    internal var storage: [T] = []
+    public var storage: [T] = []
     /// The `MinHeapRecursive` recursive `heapifyUp` starter method.
-    mutating internal func heapifyUp() {
+    mutating public func heapifyUp() {
         heapifyUp(at: self.size - 1)
     }
     /// The `MinHeapRecursive` recursive `heapifyUp` algorithm.
@@ -273,7 +273,7 @@ public struct MinHeapRecursive<T: Comparable>: Heap {
         }
     }
     /// The `MinHeapRecursive` recursive `heapifyDown` starter method.
-    mutating internal func heapifyDown() {
+    mutating public func heapifyDown() {
         self.heapifyDown(at: 0)
     }
     /// The `MinHeapRecursive` recursive `heapifyDown` algorithm.
