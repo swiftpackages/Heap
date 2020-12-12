@@ -14,10 +14,10 @@ You can easily add as a requirement with SwiftPM.
 
 Here are some quick copypastas for you
 ```swift
-.package(url: "https://github.com/swiftpackages/DotEnv.git", from: "1.1.0"),
+.package(url: "https://github.com/swiftpackages/Heap.git", from: "1.1.0"),
 ```
 ```swift
-.product(name: "DotEnv", package: "DotEnv"),
+.product(name: "Heap", package: "Heap"),
 ```
 
 ### Need a reminder?
@@ -37,13 +37,13 @@ let package = Package(
             targets: ["SuperCoolProject"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/swiftpackages/DotEnv.git", from: "1.1.0"),
+        .package(url: "https://github.com/swiftpackages/Heap.git", from: "1.1.0"),
     ],
     targets: [
         .target(
             name: "SuperCoolProject",
             dependencies: [
-                .product(name: "DotEnv", package: "DotEnv"),
+                .product(name: "Heap", package: "Heap"),
             ]),
         .testTarget(
             name: "SuperCoolProject",
