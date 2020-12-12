@@ -35,7 +35,7 @@ extension Heap {
     /// Read and remove the next item off `Heap`.
     ///
     /// - returns: The next item of type `T` from the `Heap` or, if the `Heap`.`isEmpty` return's `nil`.
-    public mutating func pull() -> T? {
+    mutating public func pull() -> T? {
         let item = peak()
         guard !self.isEmpty else {
             return nil
@@ -51,7 +51,7 @@ extension Heap {
     ///
     /// - parameters:
     ///     - elem: Item to add to the `Heap`.
-    public mutating func add(_ elem: T) {
+    mutating public func add(_ elem: T) {
         self.storage.append(elem)
         self.heapifyUp()
     }
