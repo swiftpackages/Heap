@@ -62,6 +62,9 @@
             <a class="nav-group-name-link" href="Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/HeapIterator.html">HeapIterator</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Structs/MaxHeap.html">MaxHeap</a>
               </li>
               <li class="nav-group-task">
@@ -94,6 +97,46 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:4Heap0A8IteratorV"></a>
+                    <a name="//apple_ref/swift/Struct/HeapIterator" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Heap0A8IteratorV">HeapIterator</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The <code>HeapIterator</code> used to conform to <code>Sequence</code></p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <code>HeapIterator</code> conforms to <code>IteratorProtocol</code>
+
+</div><div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    It&rsquo;s generic <code>H</code> conforms to <code><a href="Protocols/Heap.html">Heap</a></code>
+
+</div>
+
+                        <a href="Structs/HeapIterator.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">HeapIterator</span><span class="o">&lt;</span><span class="kt">H</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt">IteratorProtocol</span> <span class="k">where</span> <span class="kt">H</span> <span class="p">:</span> <span class="kt"><a href="Protocols/Heap.html">Heap</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L151-L168">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:4Heap03MaxA0V"></a>
                     <a name="//apple_ref/swift/Struct/MaxHeap" class="dashAnchor"></a>
                     <a class="token" href="#/s:4Heap03MaxA0V">MaxHeap</a>
@@ -106,6 +149,10 @@
                       <div class="abstract">
                         <p>A <code>MaxHeap</code> using iterative heapify methods.</p>
 <div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <code>MaxHeap</code> conforms to <code><a href="Protocols/Heap.html">Heap</a></code>
+
+</div><div class="aside aside-note">
     <p class="aside-title">Note</p>
     The datatype in the <code><a href="Protocols/Heap.html">Heap</a></code> must conform to <code>Comparable</code>.
 
@@ -122,7 +169,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L143-L174">Show on GitHub</a>
+                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L172-L203">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -143,6 +190,10 @@
                         <p>A <code>MinHeap</code> using iterative heapify methods.</p>
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
+    <code>MinHeap</code> conforms to <code><a href="Protocols/Heap.html">Heap</a></code>
+
+</div><div class="aside aside-note">
+    <p class="aside-title">Note</p>
     The datatype in the <code><a href="Protocols/Heap.html">Heap</a></code> must conform to <code>Comparable</code>.
 
 </div>
@@ -158,7 +209,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L177-L208">Show on GitHub</a>
+                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L207-L238">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -179,6 +230,10 @@
                         <p>A <code>MaxHeapRecursive</code> using recursive heapify methods.</p>
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
+    <code>MaxHeapRecursive</code> conforms to <code><a href="Protocols/Heap.html">Heap</a></code>
+
+</div><div class="aside aside-note">
+    <p class="aside-title">Note</p>
     The datatype in the <code><a href="Protocols/Heap.html">Heap</a></code> must conform to <code>Comparable</code>.
 
 </div>
@@ -194,7 +249,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L211-L253">Show on GitHub</a>
+                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L242-L284">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -215,6 +270,10 @@
                         <p>A <code>MinHeapRecursive</code> using recursive heapify methods.</p>
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
+    <code>MinHeapRecursive</code> conforms to <code><a href="Protocols/Heap.html">Heap</a></code>
+
+</div><div class="aside aside-note">
+    <p class="aside-title">Note</p>
     The datatype in the <code><a href="Protocols/Heap.html">Heap</a></code> must conform to <code>Comparable</code>.
 
 </div>
@@ -230,7 +289,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L256-L298">Show on GitHub</a>
+                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L288-L330">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -243,7 +302,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://github.com/marzvrover" target="_blank" rel="external">Marz Rover</a>. All rights reserved. (Last updated: 2020-12-12)</p>
+      <p>&copy; 2020 <a class="link" href="https://github.com/marzvrover" target="_blank" rel="external">Marz Rover</a>. All rights reserved. (Last updated: 2020-12-15)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

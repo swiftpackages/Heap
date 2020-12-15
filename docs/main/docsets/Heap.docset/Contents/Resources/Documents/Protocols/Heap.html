@@ -62,6 +62,9 @@
             <a class="nav-group-name-link" href="../Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/HeapIterator.html">HeapIterator</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/MaxHeap.html">MaxHeap</a>
               </li>
               <li class="nav-group-task">
@@ -85,14 +88,19 @@
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Heap</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Heap</span> <span class="p">:</span> <span class="kt">Sequence</span></code></pre>
 
                 </div>
               </div>
             <p>The <code>Heap</code> protocol</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <code>Heap</code> conforms to <code>Sequence</code>.
+
+</div>
 
               <div class="slightly-smaller">
-                <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L2-L15">Show on GitHub</a>
+                <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L3-L16">Show on GitHub</a>
               </div>
           </div>
         </section>
@@ -126,7 +134,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L4">Show on GitHub</a>
+                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L5">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -156,7 +164,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L6">Show on GitHub</a>
+                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L7">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -194,7 +202,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L8">Show on GitHub</a>
+                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L9">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -232,7 +240,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L10">Show on GitHub</a>
+                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L11">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -262,7 +270,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L12">Show on GitHub</a>
+                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L13">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -292,7 +300,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L14">Show on GitHub</a>
+                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L15">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -329,7 +337,7 @@
                         <p>The next item of type <code><a href="../Protocols/Heap.html#/s:4HeapAAP1TQa">T</a></code> from the <code>Heap</code> or, if the <code><a href="../Protocols/Heap.html#/s:4HeapAAP7isEmptySbvp">Heap</code>.<code>isEmpty</a></code> return&rsquo;s <code>nil</code>.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L29-L34">Show on GitHub</a>
+                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L30-L35">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -366,7 +374,7 @@
                         <p>The next item of type <code><a href="../Protocols/Heap.html#/s:4HeapAAP1TQa">T</a></code> from the <code>Heap</code> or, if the <code><a href="../Protocols/Heap.html#/s:4HeapAAP7isEmptySbvp">Heap</code>.<code>isEmpty</a></code> return&rsquo;s <code>nil</code>.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L38-L49">Show on GitHub</a>
+                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L39-L50">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -418,7 +426,44 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L54-L57">Show on GitHub</a>
+                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L55-L58">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4HeapAAPAAE12makeIteratorAA0aC0VyxGyF"></a>
+                    <a name="//apple_ref/swift/Method/makeIterator()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4HeapAAPAAE12makeIteratorAA0aC0VyxGyF">makeIterator()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>Sequence</code>.<code>makeIterator()</code> to conform to <code>Sequence</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">makeIterator</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/HeapIterator.html">HeapIterator</a></span><span class="o">&lt;</span><span class="k">Self</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A <code><a href="../Structs/HeapIterator.html">HeapIterator&lt;Self&gt;</a></code> to conform to <code>Sequence</code></p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L62-L64">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -474,7 +519,7 @@
                         <p>left child index</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L63-L65">Show on GitHub</a>
+                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L70-L72">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -530,7 +575,7 @@
                         <p>right child index</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L71-L73">Show on GitHub</a>
+                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L78-L80">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -586,7 +631,7 @@
                         <p>right child index</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L79-L81">Show on GitHub</a>
+                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L86-L88">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -642,7 +687,7 @@
                         <p>true if there is a left child otherwise it returns false.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L87-L89">Show on GitHub</a>
+                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L94-L96">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -698,7 +743,7 @@
                         <p>true if there is a right child otherwise it returns false.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L95-L97">Show on GitHub</a>
+                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L102-L104">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -754,7 +799,7 @@
                         <p>True if there is a parent otherwise it returns false.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L103-L105">Show on GitHub</a>
+                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L110-L112">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -810,7 +855,7 @@
                         <p>The left child</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L111-L113">Show on GitHub</a>
+                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L118-L120">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -866,7 +911,7 @@
                         <p>The right child.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L119-L121">Show on GitHub</a>
+                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L126-L128">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -922,7 +967,7 @@
                         <p>the parent</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L127-L129">Show on GitHub</a>
+                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L134-L136">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -986,7 +1031,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L135-L139">Show on GitHub</a>
+                        <a href="https://github.com/swiftpackages/Heap/tree/main/Sources/Heap/Heap.swift#L142-L146">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -999,7 +1044,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://github.com/marzvrover" target="_blank" rel="external">Marz Rover</a>. All rights reserved. (Last updated: 2020-12-12)</p>
+      <p>&copy; 2020 <a class="link" href="https://github.com/marzvrover" target="_blank" rel="external">Marz Rover</a>. All rights reserved. (Last updated: 2020-12-15)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
