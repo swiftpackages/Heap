@@ -14,7 +14,7 @@ You can easily add as a requirement with SwiftPM.
 
 Here are some quick copypastas for you
 ```swift
-.package(url: "https://github.com/swiftpackages/Heap.git", from: "1.1.1"),
+.package(url: "https://github.com/swiftpackages/Heap.git", from: "1.2.0"),
 ```
 ```swift
 .product(name: "Heap", package: "Heap"),
@@ -37,7 +37,7 @@ let package = Package(
             targets: ["SuperCoolProject"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/swiftpackages/Heap.git", from: "1.1.1"),
+        .package(url: "https://github.com/swiftpackages/Heap.git", from: "1.2.0"),
     ],
     targets: [
         .target(
@@ -74,6 +74,29 @@ heap.peak()
 
 // get root node value and remove it
 heap.pull()
+```
+### Iteration
+
+With [v1.2.0](https://github.com/swiftpackages/Heap/tree/v1.2.0) `Heap` conforms to `Sequence` allowing you to iterate through the stored items.
+
+```swift
+var heap = MinHeap<Int>()
+
+heap.add(2)
+heap.add(1)
+heap.add(3)
+
+for value in heap {
+    print(value)
+}
+/* 1
+   2
+   3 */
+
+// heap can still be used as if it wasn't iterated over.
+heap.pull() // 1
+heap.pull() // 2
+heap.pull() // 3
 ```
 
 ### Additional Documentation

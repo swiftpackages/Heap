@@ -1,5 +1,6 @@
 /// The `Heap` protocol
-public protocol Heap {
+/// - note: `Heap` conforms to `Sequence`.
+public protocol Heap: Sequence {
     /// The type to store in the `Heap`
     associatedtype T
     /// The storage array of the `Heap`
@@ -35,7 +36,7 @@ extension Heap {
     /// Read and remove the next item off `Heap`.
     ///
     /// - returns: The next item of type `T` from the `Heap` or, if the `Heap`.`isEmpty` return's `nil`.
-    mutating public func pull() -> T? {
+    public mutating func pull() -> T? {
         let item = peak()
         guard !self.isEmpty else {
             return nil
@@ -51,9 +52,15 @@ extension Heap {
     ///
     /// - parameters:
     ///     - elem: Item to add to the `Heap`.
-    mutating public func add(_ elem: T) {
+    public mutating func add(_ elem: T) {
         self.storage.append(elem)
         self.heapifyUp()
+    }
+    /// `Sequence`.`makeIterator()` to conform to `Sequence`
+    ///
+    /// - returns: A `HeapIterator<Self>` to conform to `Sequence`
+    public func makeIterator() -> HeapIterator<Self> {
+        return HeapIterator(self)
     }
     /// Calculates the left child index for any given index
     ///
@@ -138,7 +145,29 @@ extension Heap {
         self.storage[second] = tmp
     }
 }
+/// The `HeapIterator` used to conform to `Sequence`
+/// - note: `HeapIterator` conforms to `IteratorProtocol`
+/// - note: It's generic `H` conforms to `Heap`
+public struct HeapIterator<H: Heap>: IteratorProtocol {
+    /// Internal heap used by the iterator
+    var heap: H
+    /// Init method for the iterator
+    init(_ heap: H) {
+        self.heap = heap
+    }
+    /// The next item in the iteration.
+    ///
+    /// - returns: The result of `Heap`.`pull()` -> `T?`
+    public mutating func next() -> H.T? {
+        if heap.isEmpty {
+            return nil
+        } else {
+            return  heap.pull()
+        }
+    }
+}
 /// A `MaxHeap` using iterative heapify methods.
+/// - note: `MaxHeap` conforms to `Heap`
 /// - note: The datatype in the `Heap` must conform to `Comparable`.
 public struct MaxHeap<T: Comparable>: Heap {
     /// Public init
@@ -173,6 +202,7 @@ public struct MaxHeap<T: Comparable>: Heap {
     }
 }
 /// A `MinHeap` using iterative heapify methods.
+/// - note: `MinHeap` conforms to `Heap`
 /// - note: The datatype in the `Heap` must conform to `Comparable`.
 public struct MinHeap<T: Comparable>: Heap {
     /// Public init
@@ -207,6 +237,7 @@ public struct MinHeap<T: Comparable>: Heap {
     }
 }
 /// A `MaxHeapRecursive` using recursive heapify methods.
+/// - note: `MaxHeapRecursive` conforms to `Heap`
 /// - note: The datatype in the `Heap` must conform to `Comparable`.
 public struct MaxHeapRecursive<T: Comparable>: Heap {
     /// Public init
@@ -252,6 +283,7 @@ public struct MaxHeapRecursive<T: Comparable>: Heap {
     }
 }
 /// A `MinHeapRecursive` using recursive heapify methods.
+/// - note: `MinHeapRecursive` conforms to `Heap`
 /// - note: The datatype in the `Heap` must conform to `Comparable`.
 public struct MinHeapRecursive<T: Comparable>: Heap {
     /// Public init
