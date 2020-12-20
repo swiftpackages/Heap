@@ -177,7 +177,7 @@ public struct MaxHeap<T: Comparable>: Heap {
     /// The `MaxHeap` iterative `heapifyUp` algorithm.
     mutating public func heapifyUp() {
         var index = self.size - 1
-        while (hasParent(index) && self.storage[index] > getParent(index)) {
+        while hasParent(index) && self.storage[index] > getParent(index) {
             let parentIndex = Self.getParentIndex(index)
             swap(parentIndex, index)
             index = parentIndex
@@ -186,13 +186,13 @@ public struct MaxHeap<T: Comparable>: Heap {
     /// The `MaxHeap` iterative `heapifyDown` algorithm.
     mutating public func heapifyDown() {
         var index = 0
-        while (hasLeftChild(index)) {
+        while hasLeftChild(index) {
             var largest = Self.getLeftChildIndex(index)
-            if (hasRightChild(index) && getRightChild(index) > getLeftChild(index)) {
+            if hasRightChild(index) && getRightChild(index) > getLeftChild(index) {
                 largest = Self.getRightChildIndex(index)
             }
 
-            if (self.storage[index] > self.storage[largest]) {
+            if self.storage[index] > self.storage[largest] {
                 break
             } else {
                 swap(index, largest)
@@ -212,7 +212,7 @@ public struct MinHeap<T: Comparable>: Heap {
     /// The `MinHeap` iterative `heapifyUp` algorithm.
     mutating public func heapifyUp() {
         var index = self.size - 1
-        while (hasParent(index) && self.storage[index] < getParent(index)) {
+        while hasParent(index) && self.storage[index] < getParent(index) {
             let parentIndex = Self.getParentIndex(index)
             swap(parentIndex, index)
             index = parentIndex
@@ -221,13 +221,13 @@ public struct MinHeap<T: Comparable>: Heap {
     /// The `MinHeap` iterative `heapifyDown` algorithm.
     mutating public func heapifyDown() {
         var index = 0
-        while (hasLeftChild(index)) {
+        while hasLeftChild(index) {
             var smallest = Self.getLeftChildIndex(index)
-            if (hasRightChild(index) && getRightChild(index) < getLeftChild(index)) {
+            if hasRightChild(index) && getRightChild(index) < getLeftChild(index) {
                 smallest = Self.getRightChildIndex(index)
             }
 
-            if (self.storage[index] < self.storage[smallest]) {
+            if self.storage[index] < self.storage[smallest] {
                 break
             } else {
                 swap(index, smallest)
@@ -276,7 +276,7 @@ public struct MaxHeapRecursive<T: Comparable>: Heap {
             largest = Self.getRightChildIndex(index)
         }
 
-        if (largest != index) {
+        if largest != index {
             swap(index, largest)
             heapifyDown(at: largest)
         }
@@ -298,7 +298,7 @@ public struct MinHeapRecursive<T: Comparable>: Heap {
     /// - parameters:
     ///     - at: The index to `heapifyUp` from.
     mutating internal func heapifyUp(at index: Int) {
-        if (hasParent(index) && storage[index] < getParent(index)) {
+        if hasParent(index) && storage[index] < getParent(index) {
             let parentIndex = Self.getParentIndex(index)
             swap(index, parentIndex)
             heapifyUp(at: parentIndex)
@@ -314,11 +314,11 @@ public struct MinHeapRecursive<T: Comparable>: Heap {
     mutating internal func heapifyDown(at index: Int) {
         var smallest = index
 
-        if (hasLeftChild(index) && getLeftChild(index) < storage[index]) {
+        if hasLeftChild(index) && getLeftChild(index) < storage[index] {
             smallest = Self.getLeftChildIndex(index)
         }
 
-        if (hasRightChild(index) && getRightChild(index) < storage[smallest]) {
+        if hasRightChild(index) && getRightChild(index) < storage[smallest] {
             smallest = Self.getRightChildIndex(index)
         }
 
