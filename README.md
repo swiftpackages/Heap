@@ -1,6 +1,7 @@
 ![macOS](https://github.com/swiftpackages/Heap/workflows/macOS/badge.svg)
 ![ubuntu](https://github.com/swiftpackages/Heap/workflows/ubuntu/badge.svg)
 ![docs](https://github.com/swiftpackages/Heap/workflows/docs/badge.svg)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/7d3dfe44394f4f4c8f72103d3712af3e)](https://www.codacy.com/gh/swiftpackages/Heap/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=swiftpackages/Heap&amp;utm_campaign=Badge_Grade)
 
 # Heap
 
