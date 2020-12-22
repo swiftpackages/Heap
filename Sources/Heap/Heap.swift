@@ -2,9 +2,9 @@
 /// - note: `Heap` conforms to `Sequence`.
 public protocol Heap: Sequence {
     /// The type to store in the `Heap`
-    associatedtype T
+    associatedtype ElementType
     /// The storage array of the `Heap`
-    var storage: [T] { get set }
+    var storage: [ElementType] { get set }
     /// The size of the `Heap`
     var size: Int { get }
     /// True if the `Heap` is empty it is true and otherwise is false.
@@ -14,7 +14,8 @@ public protocol Heap: Sequence {
     /// A function implementing the `heapifyDown` algorithm
     mutating func heapifyDown()
 }
-/// `Heap` extension to provides all the shared code between `MaxHeap`, `MinHeap`, `MaxHeapRecursive`, and `MinHeapRecursive`.
+/// `Heap` extension to provides all the shared code between `MaxHeap`, `MinHeap`,
+/// `MaxHeapRecursive`, and `MinHeapRecursive`.
 extension Heap {
     /// The internal storage's `Array`.`size` property
     public var size: Int {
@@ -26,8 +27,8 @@ extension Heap {
     }
     /// Read the next item off the `Heap` without removing it.
     ///
-    /// - returns: The next item of type `T` from the `Heap` or, if the `Heap`.`isEmpty` return's `nil`.
-    public func peak() -> T? {
+    /// - returns: The next item of type `ElementType` from the `Heap` or, if the `Heap`.`isEmpty` return's `nil`.
+    public func peak() -> ElementType? {
         guard !self.isEmpty else {
             return nil
         }
@@ -35,8 +36,8 @@ extension Heap {
     }
     /// Read and remove the next item off `Heap`.
     ///
-    /// - returns: The next item of type `T` from the `Heap` or, if the `Heap`.`isEmpty` return's `nil`.
-    public mutating func pull() -> T? {
+    /// - returns: The next item of type `ElementType` from the `Heap` or, if the `Heap`.`isEmpty` return's `nil`.
+    public mutating func pull() -> ElementType? {
         let item = peak()
         guard !self.isEmpty else {
             return nil
@@ -52,7 +53,7 @@ extension Heap {
     ///
     /// - parameters:
     ///     - elem: Item to add to the `Heap`.
-    public mutating func add(_ elem: T) {
+    public mutating func add(_ elem: ElementType) {
         self.storage.append(elem)
         self.heapifyUp()
     }
@@ -115,7 +116,7 @@ extension Heap {
     /// - parameters:
     ///     - parent: The parent index.
     /// - returns: The left child
-    internal func getLeftChild(_ parent: Int) -> T {
+    internal func getLeftChild(_ parent: Int) -> ElementType {
         return self.storage[Self.getLeftChildIndex(parent)]
     }
     /// Retrieve the right child
@@ -123,7 +124,7 @@ extension Heap {
     /// - parameters:
     ///     - parent: the parent index
     /// - returns: The right child.
-    internal func getRightChild(_ parent: Int) -> T {
+    internal func getRightChild(_ parent: Int) -> ElementType {
         return self.storage[Self.getRightChildIndex(parent)]
     }
     /// Retrieve the parent
@@ -131,7 +132,7 @@ extension Heap {
     /// - parameters:
     ///     - child: the child index
     /// - returns: the parent
-    internal func getParent(_ child: Int) -> T {
+    internal func getParent(_ child: Int) -> ElementType {
         return self.storage[Self.getParentIndex(child)]
     }
     /// Swap element's indecies
@@ -158,7 +159,7 @@ public struct HeapIterator<H: Heap>: IteratorProtocol {
     /// The next item in the iteration.
     ///
     /// - returns: The result of `Heap`.`pull()` -> `T?`
-    public mutating func next() -> H.T? {
+    public mutating func next() -> H.ElementType? {
         if heap.isEmpty {
             return nil
         } else {
@@ -169,11 +170,11 @@ public struct HeapIterator<H: Heap>: IteratorProtocol {
 /// A `MaxHeap` using iterative heapify methods.
 /// - note: `MaxHeap` conforms to `Heap`
 /// - note: The datatype in the `Heap` must conform to `Comparable`.
-public struct MaxHeap<T: Comparable>: Heap {
+public struct MaxHeap<ElementType: Comparable>: Heap {
     /// Public init
     public init() {}
     /// The storage array of the `Heap`
-    public var storage: [T] = []
+    public var storage: [ElementType] = []
     /// The `MaxHeap` iterative `heapifyUp` algorithm.
     mutating public func heapifyUp() {
         var index = self.size - 1
@@ -204,11 +205,11 @@ public struct MaxHeap<T: Comparable>: Heap {
 /// A `MinHeap` using iterative heapify methods.
 /// - note: `MinHeap` conforms to `Heap`
 /// - note: The datatype in the `Heap` must conform to `Comparable`.
-public struct MinHeap<T: Comparable>: Heap {
+public struct MinHeap<ElementType: Comparable>: Heap {
     /// Public init
     public init() {}
     /// The storage array of the `Heap`
-    public var storage: [T] = []
+    public var storage: [ElementType] = []
     /// The `MinHeap` iterative `heapifyUp` algorithm.
     mutating public func heapifyUp() {
         var index = self.size - 1
@@ -239,11 +240,11 @@ public struct MinHeap<T: Comparable>: Heap {
 /// A `MaxHeapRecursive` using recursive heapify methods.
 /// - note: `MaxHeapRecursive` conforms to `Heap`
 /// - note: The datatype in the `Heap` must conform to `Comparable`.
-public struct MaxHeapRecursive<T: Comparable>: Heap {
+public struct MaxHeapRecursive<ElementType: Comparable>: Heap {
     /// Public init
     public init() {}
     /// The storage array of the `Heap`
-    public var storage: [T] = []
+    public var storage: [ElementType] = []
     /// The `MaxHeapRecursive` recursive `heapifyUp` starter method.
     mutating public func heapifyUp() {
         heapifyUp(at: self.size - 1)
@@ -285,11 +286,11 @@ public struct MaxHeapRecursive<T: Comparable>: Heap {
 /// A `MinHeapRecursive` using recursive heapify methods.
 /// - note: `MinHeapRecursive` conforms to `Heap`
 /// - note: The datatype in the `Heap` must conform to `Comparable`.
-public struct MinHeapRecursive<T: Comparable>: Heap {
+public struct MinHeapRecursive<ElementType: Comparable>: Heap {
     /// Public init
     public init() {}
     /// The storage array of the `Heap`
-    public var storage: [T] = []
+    public var storage: [ElementType] = []
     /// The `MinHeapRecursive` recursive `heapifyUp` starter method.
     mutating public func heapifyUp() {
         heapifyUp(at: self.size - 1)
