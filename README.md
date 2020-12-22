@@ -1,3 +1,8 @@
+<div align="center">
+    <img src=".github/resources/logo.svg" width="90%" alt="Heap for Swift" />
+</div>
+<br />
+
 ![macOS](https://github.com/swiftpackages/Heap/workflows/macOS/badge.svg)
 ![ubuntu](https://github.com/swiftpackages/Heap/workflows/ubuntu/badge.svg)
 ![docs](https://github.com/swiftpackages/Heap/workflows/docs/badge.svg)
