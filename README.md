@@ -1,5 +1,5 @@
 <div align="center">
-    <img src=".github/resources/logo.svg" width="90%" alt="Heap for Swift" />
+    <img src="https://raw.githubusercontent.com/swiftpackages/Heap/main/.github/resources/logo.svg" width="90%" alt="Heap for Swift" />
 </div>
 <br />
 
