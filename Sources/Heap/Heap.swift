@@ -82,8 +82,8 @@ extension Heap {
     /// Calculates the parent index for any given index
     ///
     /// - parameters:
-    ///     - child: the parent index
-    /// - returns: right child index
+    ///     - child: the child index
+    /// - returns: the parent index
     internal static func getParentIndex(_ child: Int) -> Int {
         return (child - 1) / 2
     }
